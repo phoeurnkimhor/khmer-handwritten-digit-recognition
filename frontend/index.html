@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khmer Digit Recognition</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Khmer Digit Recognition</h1>
+            <p>Draw Khmer digits (០–៩) on the canvas below</p>
+        </header>
+
+        <main>
+            <!-- Canvas Drawing Area -->
+            <section class="canvas-section">
+                <div class="canvas-wrapper">
+                    <canvas id="drawingCanvas" width="400" height="400"></canvas>
+                    <p class="canvas-hint">Draw here (mouse or touch)</p>
+                </div>
+
+                <!-- Control Buttons -->
+                <div class="button-group">
+                    <button id="clearBtn" class="btn btn-secondary">Clear Canvas</button>
+                    <button id="predictBtn" class="btn btn-primary">Predict</button>
+                </div>
+            </section>
+
+            <!-- Prediction Results -->
+            <section class="results-section">
+                <h2>Prediction Results</h2>
+                <div id="resultsContainer" class="results-container">
+                    <p class="placeholder">No prediction yet. Draw a digit and click Predict!</p>
+                </div>
+
+                <!-- Error Messages -->
+                <div id="errorContainer" class="error-container"></div>
+            </section>
+        </main>
+
+        <!-- Connection Info -->
+        <footer>
+            <p class="text-muted">Backend URL: <span id="backendUrl">http://localhost:8000</span></p>
+            <p class="text-muted text-sm">API Endpoint: POST /predict/strokes</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
